@@ -17,8 +17,10 @@ echo -e "===== Install zsh =====\n"
 sudo apt update
 sudo apt install -y zsh
 
+sudo chsh -s $(which zsh) $USER
+
 echo -e "\n===== Install and customize oh-my-zsh =====\n"
-RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 cat > $HOME/.oh-my-zsh/themes/qzhang.zsh-theme << 'EOF'
 # RVM settings
