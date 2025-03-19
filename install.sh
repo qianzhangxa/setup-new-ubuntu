@@ -12,12 +12,16 @@ else
     exit 1
 fi
 
+echo -e "===== Set timezone to Asia/Shanghai =====\n"
+sudo timedatectl set-timezone Asia/Shanghai
 
-echo -e "===== Install zsh =====\n"
+
+echo -e "\n===== Install zsh =====\n"
 sudo apt update
 sudo apt install -y zsh
 
 sudo chsh -s $(which zsh) $USER
+
 
 echo -e "\n===== Install and customize oh-my-zsh =====\n"
 RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
