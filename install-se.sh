@@ -76,6 +76,10 @@ EOF
 
 chmod +x $HOME/bin/nls $HOME/bin/pls
 
+echo -e "\n===== Install tree and bat =====\n"
+sudo apt install -y tree bat
+ln -s /usr/bin/batcat $HOME/bin/bat
+
 echo -e "\n===== Add .vimrc =====\n"
 cat > $HOME/.vimrc << 'EOF'
 set nocompatible
