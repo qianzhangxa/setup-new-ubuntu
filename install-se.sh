@@ -77,7 +77,7 @@ EOF
 chmod +x $HOME/bin/nls $HOME/bin/pls
 
 echo -e "\n===== Install some utilities =====\n"
-sudo apt install -y tree bat moreutils
+sudo apt install -y tree bat net-tools moreutils
 ln -s /usr/bin/batcat $HOME/bin/bat
 
 echo -e "\n===== Add .vimrc =====\n"
