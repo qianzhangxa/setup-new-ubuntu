@@ -93,8 +93,8 @@ echo -e "\n===== Create workspace, packages and include directories =====\n"
 mkdir $HOME/workspace $HOME/packages $HOME/include
 
 
-echo -e "\n===== Install tree, bat, net tools and build tools =====\n"
-sudo apt install -y tree bat net-tools build-essential gdb
+echo -e "\n===== Install some utilities =====\n"
+sudo apt install -y tree bat net-tools moreutils build-essential gdb
 ln -s /usr/bin/batcat $HOME/bin/bat
 
 
