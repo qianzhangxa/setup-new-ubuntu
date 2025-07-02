@@ -146,6 +146,8 @@ alias db='docker build'
 
 alias date="date '+%Y-%m-%d %H:%M:%S %Z %z'"
 
+alias svi='sudo -E vim'
+
 export LS_COLORS=$LS_COLORS:'di=1;37;104'
 zstyle ':completion:*' list-colors 'di=1;37;104'
 
