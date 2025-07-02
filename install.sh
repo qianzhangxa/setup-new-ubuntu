@@ -182,6 +182,8 @@ alias l='ls -lh'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias svi='sudo -E vim'
+alias date="date '+%Y-%m-%d %H:%M:%S %Z %z'"
 
 alias dp='docker ps'
 alias dpa='docker ps -a'
@@ -198,9 +200,6 @@ alias dsp='docker stop'
 alias de='docker exec'
 alias dl='docker logs'
 alias db='docker build'
-
-alias date="date '+%Y-%m-%d %H:%M:%S %Z %z'"
-alias svi='sudo -E vim'
 
 export LS_COLORS=$LS_COLORS:'di=1;37;104'
 zstyle ':completion:*' list-colors 'di=1;37;104'
