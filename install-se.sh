@@ -112,6 +112,18 @@ set hlsearch
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Install Vim plugin manager
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Install the vim-commentary plugin
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-commentary'
+call plug#end()
 EOF
 
 echo -e "\n===== Customize .zshrc =====\n"
