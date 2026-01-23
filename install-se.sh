@@ -29,8 +29,8 @@ else
   fi
 fi
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$bg[green]%}%{$fg_bold[white]%}["
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}%{$bg[green]%}%{$fg_bold[white]%}]"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$bg[red]%}%{$fg_bold[white]%}["
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}%{$bg[red]%}%{$fg_bold[white]%}]"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[yellow]%}*%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
@@ -42,7 +42,7 @@ git_custom_status() {
   fi
 }
 
-PROMPT='%{$bg[cyan]%}%{$fg_bold[white]%}[%~% ]$(git_custom_status)%{$reset_color%}%(?:%{$fg_bold[white]%}=>:%{$fg_bold[red]%}=>)%{$reset_color%} '
+PROMPT='%{$bg[magenta]%}%{$fg_bold[white]%}[%~% ]$(git_custom_status)%{$reset_color%}%(?:%{$fg_bold[white]%}=>:%{$fg_bold[red]%}=>)%{$reset_color%} '
 EOF
 
 GIT_PLUGIN_FILE="$HOME/.oh-my-zsh/plugins/git/git.plugin.zsh"
@@ -84,8 +84,6 @@ echo -e "\n===== Add .vimrc =====\n"
 cat > $HOME/.vimrc << 'EOF'
 set nocompatible
 
-colorscheme desert
-
 set shiftwidth=2
 set sts=2
 set tabstop=2
@@ -104,6 +102,11 @@ map <Space> <C-F>
 map <S-Space> <C-B>
 
 syntax enable
+
+colorscheme koehler
+highlight Normal ctermbg=NONE guibg=NONE
+
+set t_ti= t_te=
 
 set expandtab
 set nobackup
@@ -158,8 +161,9 @@ alias de='docker exec'
 alias dl='docker logs'
 alias db='docker build'
 
-export LS_COLORS=$LS_COLORS:'di=1;37;104'
-zstyle ':completion:*' list-colors 'di=1;37;104'
+export LS_COLORS=$LS_COLORS:'di=1;37;44'
+zstyle ':completion:*' list-colors 'di=1;37;44'
+zstyle ':completion:*' insert-tab pending-off
 
 # Enable vi mode and custom keybindings
 set -o vi
