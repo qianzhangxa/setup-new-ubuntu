@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 
 cat >> $HOME/.bashrc << 'EOF'
 
@@ -24,5 +25,3 @@ __git_branch_dirty() {
 
 PS1='\[\e[35m\][\w]\[\e[0m\]\[\e[36m\]$(branch=$(__git_branch_dirty); [ -n "$branch" ] && echo "[$branch]")\[\e[0m\]=> '
 EOF
-
-source $HOME/.bashrc
